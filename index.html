@@ -2,12 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Meals Tracker</title>
+  <title>My Fitness Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1abc9c">
-
 </head>
 <body>
 
@@ -15,47 +12,35 @@
   <h1>🏋️ My Meals Tracker</h1>
   <p>62-Day Diet & Weight Journey</p>
 
-  <input type="file" accept=".csv" onchange="loadMealPlanFromCSV(this)">
   <button onclick="deleteMealPlan()">🗑️ Delete Plan</button>
-
   <button id="darkToggle">🌙</button>
 </header>
 
 <nav>
   <button onclick="showPage('day')">Day</button>
-  <button onclick="showPage('week')">Week List</button>
+  <button onclick="showPage('week')">Week</button>
   <button onclick="showPage('week-grid')">📅 Calendar</button>
   <button onclick="showPage('summary')">Summary</button>
 </nav>
 
-<!-- DAY PAGE -->
 <section id="page-day">
   <div id="dayStrip" class="day-strip"></div>
   <div id="dayDetails"></div>
 </section>
 
-<!-- WEEK LIST -->
 <section id="page-week" style="display:none">
   <div id="weekView"></div>
 </section>
 
-<!-- WEEK GRID -->
 <section id="page-week-grid" style="display:none">
   <h3>📅 Weekly Calendar</h3>
   <div id="weekGrid" class="week-grid"></div>
 </section>
 
-<!-- SUMMARY -->
 <section id="page-summary" style="display:none">
   <div id="weeklySummary"></div>
 </section>
 
 <script src="app.js"></script>
-<script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
-  </script>
-  
 </body>
 </html>
